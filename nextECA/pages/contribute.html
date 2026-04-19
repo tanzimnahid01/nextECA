@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contribute — nextECA</title>
+  <link rel="icon" href="../images/logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="noise"></div>
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo"><span class="logo-nxt">ne<span class="chevron-logo">&#10095;</span>t</span><span class="logo-eca">ECA</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#opportunities">Opportunities</a></li>
+    <li><a href="hackathons.html">Hackathons</a></li>
+    <li><a href="olympiads.html">Olympiads</a></li>
+    <li><a href="international.html">International</a></li>
+    <li><a href="../index.html#updates">Updates</a></li>
+    <li><a href="contribute.html" class="active-page">Contribute</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Open Source</div>
+  <h1>Contri<span class="red">bute</span></h1>
+  <p>nextECA is built by the community. Help us grow — add opportunities, fix bugs, improve designs, or spread the word.</p>
+</div>
+
+<section class="page-content">
+  <h2 class="section-h2" style="margin-top:0;">How to <span class="red">Contribute</span></h2>
+  <div class="contribute-steps">
+    <div class="step-card">
+      <div class="step-num">Step 01</div>
+      <h3>Fork the Repository</h3>
+      <p>Go to our GitHub page and fork the nextECA repository to your account. This gives you your own copy to work on.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 02</div>
+      <h3>Add or Edit Data</h3>
+      <p>Open <code>js/data.js</code> and add a new opportunity entry following the existing format. Fill all required fields.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 03</div>
+      <h3>Submit a Pull Request</h3>
+      <p>Once your changes look good, open a Pull Request with a clear description. Our team reviews and merges within 48 hours.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">Step 04</div>
+      <h3>Get Credited</h3>
+      <p>All contributors are credited in our README.md and Contributors page. Your name lives in the project history forever.</p>
+    </div>
+  </div>
+
+  <h2 class="section-h2">Adding an Opportunity — <span class="red">Format</span></h2>
+  <div class="code-block">
+    <span class="cm">// Add this object to the opportunities array in js/data.js</span><br/>
+    {<br/>
+    &nbsp;&nbsp;<span class="ck">id</span>: <span class="cv">101</span>, <span class="cm">// Next sequential number</span><br/>
+    &nbsp;&nbsp;<span class="ck">title</span>: <span class="cs">"Your Opportunity Title"</span>,<br/>
+    &nbsp;&nbsp;<span class="ck">type</span>: <span class="cs">"hackathon"</span>, <span class="cm">// hackathon | olympiad | competition | scholarship | fellowship | volunteering</span><br/>
+    &nbsp;&nbsp;<span class="ck">country</span>: <span class="cs">"🇧🇩 Bangladesh"</span>, <span class="cm">// Flag emoji + country name</span><br/>
+    &nbsp;&nbsp;<span class="ck">description</span>: <span class="cs">"Short description under 200 characters."</span>,<br/>
+    &nbsp;&nbsp;<span class="ck">deadline</span>: <span class="cs">"2025-06-30"</span>, <span class="cm">// YYYY-MM-DD format</span><br/>
+    &nbsp;&nbsp;<span class="ck">link</span>: <span class="cs">"https://official-registration-url.com"</span>,<br/>
+    &nbsp;&nbsp;<span class="ck">urgent</span>: <span class="cv">false</span> <span class="cm">// true if deadline is within 7 days</span><br/>
+    }
+  </div>
+
+  <h2 class="section-h2">Other Ways to <span class="red">Help</span></h2>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-num">🐛</div>
+      <h3>Report Bugs</h3>
+      <p>Found something broken? Open a GitHub Issue with details — browser, device, what went wrong, and screenshots if possible.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">🎨</div>
+      <h3>Design & UI</h3>
+      <p>Have a design improvement in mind? We welcome CSS contributions, new page templates, or accessibility fixes.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">✍️</div>
+      <h3>Write Content</h3>
+      <p>Help us write detailed guides for specific ECA categories, country profiles, or university ECA culture pages.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-num">📣</div>
+      <h3>Spread the Word</h3>
+      <p>Share nextECA with your school, university, or online community. Every share helps a student find an opportunity.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:80px;text-align:center;">
+    <a href="https://github.com/nextECA" target="_blank" class="btn btn-primary" style="margin-right:16px;">⭐ Open on GitHub</a>
+    <a href="about.html" class="btn btn-outline">About nextECA</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:100%;padding:24px 60px;border-top:1px solid #1a1a1a;">
+    <span>© 2025 nextECA · nextPrtnr</span>
+    <a href="../index.html">← Home</a>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

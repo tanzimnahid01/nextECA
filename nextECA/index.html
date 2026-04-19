@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nextECA – For The Community, By The Community</title>
+  <meta name="description" content="nextECA is the open-source hub for extracurricular opportunities: hackathons, olympiads, competitions, deadlines, and more." />
+  <link rel="icon" href="images/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+<!-- ====== NOISE OVERLAY ====== -->
+<div class="noise"></div>
+
+<!-- ====== NAV ====== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <span class="logo-nxt">ne<span class="chevron-logo">&#10095;</span>t</span><span class="logo-eca">ECA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#opportunities">Opportunities</a></li>
+    <li><a href="pages/hackathons.html">Hackathons</a></li>
+    <li><a href="pages/olympiads.html">Olympiads</a></li>
+    <li><a href="pages/international.html">International</a></li>
+    <li><a href="#updates">Updates</a></li>
+    <li><a href="pages/contribute.html">Contribute</a></li>
+    <li><a href="pages/about.html">About</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ====== HERO ====== -->
+<header class="hero">
+  <div class="hero-bg-text">ECA</div>
+  <div class="hero-content">
+    <div class="hero-tag"><span class="dot"></span> Open-Source Initiative by nextPrtnr</div>
+    <h1 class="hero-title">
+      ne<span class="chevron-red">&#10095;</span>t<span class="hero-eca">ECA</span>
+    </h1>
+    <p class="hero-subtitle">For The Community, By The Community</p>
+    <p class="hero-desc">Your one-stop hub for extracurricular opportunities — hackathons, olympiads, competitions, deadlines, and everything in between.</p>
+    <div class="hero-cta">
+      <a href="#opportunities" class="btn btn-primary">Explore Opportunities</a>
+      <a href="pages/contribute.html" class="btn btn-outline">Contribute</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num" data-target="120">0</span><span class="stat-label">Active Opportunities</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="45">0</span><span class="stat-label">Countries</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="38">0</span><span class="stat-label">Universities Listed</span></div>
+    <div class="stat-divider"></div>
+    <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">Categories</span></div>
+  </div>
+  <div class="scroll-hint">SCROLL <span class="scroll-arrow">↓</span></div>
+</header>
+
+<!-- ====== DEADLINE TICKER ====== -->
+<div class="ticker-bar">
+  <div class="ticker-label">DEADLINES</div>
+  <div class="ticker-track" id="tickerTrack">
+    <!-- JS fills this -->
+  </div>
+</div>
+
+<!-- ====== CATEGORIES ====== -->
+<section class="categories" id="categories">
+  <div class="section-header">
+    <div class="section-tag">Browse By Type</div>
+    <h2>ECA <span class="red">Categories</span></h2>
+  </div>
+  <div class="cat-grid">
+    <a href="pages/hackathons.html" class="cat-card cat-hack">
+      <div class="cat-icon">⚡</div>
+      <h3>Hackathons</h3>
+      <p>Build, innovate, and compete globally</p>
+      <span class="cat-count">32 active</span>
+    </a>
+    <a href="pages/olympiads.html" class="cat-card cat-olympiad">
+      <div class="cat-icon">🏆</div>
+      <h3>Olympiads</h3>
+      <p>Math, Physics, Chemistry, Biology & more</p>
+      <span class="cat-count">18 active</span>
+    </a>
+    <a href="pages/competitions.html" class="cat-card">
+      <div class="cat-icon">🎯</div>
+      <h3>Competitions</h3>
+      <p>Case studies, debates, science fairs</p>
+      <span class="cat-count">25 active</span>
+    </a>
+    <a href="pages/scholarships.html" class="cat-card">
+      <div class="cat-icon">📚</div>
+      <h3>Scholarships</h3>
+      <p>International & local funding opportunities</p>
+      <span class="cat-count">15 active</span>
+    </a>
+    <a href="pages/fellowships.html" class="cat-card">
+      <div class="cat-icon">🌐</div>
+      <h3>Fellowships</h3>
+      <p>Research, leadership & innovation programs</p>
+      <span class="cat-count">11 active</span>
+    </a>
+    <a href="pages/volunteering.html" class="cat-card">
+      <div class="cat-icon">🤝</div>
+      <h3>Volunteering</h3>
+      <p>Give back and build your profile</p>
+      <span class="cat-count">19 active</span>
+    </a>
+  </div>
+</section>
+
+<!-- ====== UPCOMING OPPORTUNITIES ====== -->
+<section class="opportunities" id="opportunities">
+  <div class="section-header">
+    <div class="section-tag">Don't Miss Out</div>
+    <h2>Upcoming <span class="red">Opportunities</span></h2>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="hackathon">Hackathon</button>
+      <button class="filter-btn" data-filter="olympiad">Olympiad</button>
+      <button class="filter-btn" data-filter="competition">Competition</button>
+      <button class="filter-btn" data-filter="scholarship">Scholarship</button>
+    </div>
+  </div>
+  <div class="opp-grid" id="oppGrid">
+    <!-- Cards injected by JS -->
+  </div>
+  <div class="load-more-wrap">
+    <a href="pages/all-opportunities.html" class="btn btn-outline">View All Opportunities →</a>
+  </div>
+</section>
+
+<!-- ====== INTERNATIONAL SECTION ====== -->
+<section class="international" id="international">
+  <div class="intl-bg-strip"></div>
+  <div class="section-header">
+    <div class="section-tag">Go Global</div>
+    <h2>International <span class="red">Activities</span></h2>
+  </div>
+  <div class="country-map-wrap">
+    <div class="country-list" id="countryList">
+      <!-- JS fills this -->
+    </div>
+  </div>
+  <a href="pages/international.html" class="btn btn-primary center-btn">Explore All Countries →</a>
+</section>
+
+<!-- ====== UNIVERSITIES SECTION ====== -->
+<section class="universities" id="universities">
+  <div class="section-header">
+    <div class="section-tag">Academic ECA Culture</div>
+    <h2>Universities That <span class="red">Prioritize ECA</span></h2>
+  </div>
+  <div class="uni-grid" id="uniGrid">
+    <!-- JS fills this -->
+  </div>
+  <a href="pages/universities.html" class="btn btn-outline center-btn">See Full List →</a>
+</section>
+
+<!-- ====== UPDATES SECTION ====== -->
+<section class="updates" id="updates">
+  <div class="section-header">
+    <div class="section-tag">Stay In The Loop</div>
+    <h2>Latest <span class="red">Updates</span></h2>
+  </div>
+  <div class="updates-grid" id="updatesGrid">
+    <!-- JS fills -->
+  </div>
+</section>
+
+<!-- ====== DEADLINE REMINDER SIGNUP ====== -->
+<section class="reminder-section">
+  <div class="reminder-inner">
+    <div class="reminder-left">
+      <h2>Never Miss a <span class="red">Deadline</span></h2>
+      <p>Get email alerts for deadlines you care about. Choose your categories and we'll remind you 7 days before.</p>
+    </div>
+    <div class="reminder-right">
+      <div class="reminder-form">
+        <input type="email" id="reminderEmail" placeholder="your@email.com" />
+        <div class="reminder-cats">
+          <label><input type="checkbox" value="hackathon" checked /> Hackathons</label>
+          <label><input type="checkbox" value="olympiad" /> Olympiads</label>
+          <label><input type="checkbox" value="scholarship" /> Scholarships</label>
+          <label><input type="checkbox" value="fellowship" /> Fellowships</label>
+        </div>
+        <button class="btn btn-primary" onclick="subscribeReminder()">Subscribe for Reminders</button>
+        <p class="form-note" id="reminderMsg"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== OPEN SOURCE ====== -->
+<section class="opensource" id="contribute">
+  <div class="os-inner">
+    <div class="os-icon">{ }</div>
+    <h2>Open Source & <span class="red">Community Driven</span></h2>
+    <p>nextECA is built by the community, for the community. Add opportunities, fix bugs, improve documentation — every contribution matters.</p>
+    <div class="os-links">
+      <a href="https://github.com/nextECA" target="_blank" class="btn btn-primary">⭐ Star on GitHub</a>
+      <a href="pages/contribute.html" class="btn btn-outline">How to Contribute</a>
+    </div>
+    <div class="os-stats">
+      <div><span class="mono">47</span> Contributors</div>
+      <div><span class="mono">312</span> Pull Requests</div>
+      <div><span class="mono">MIT</span> License</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">ne<span class="chevron-red">&#10095;</span>t<span class="red">ECA</span></div>
+      <p>For The Community, By The Community.<br/>An Open-Source Initiative by <strong>nextPrtnr</strong></p>
+      <div class="footer-socials">
+        <a href="https://facebook.com/nextECA.org" target="_blank" title="Facebook">f</a>
+        <a href="https://linkedin.com/company/nextECA" target="_blank" title="LinkedIn">in</a>
+        <a href="https://github.com/nextECA" target="_blank" title="GitHub">gh</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="pages/hackathons.html">Hackathons</a></li>
+        <li><a href="pages/olympiads.html">Olympiads</a></li>
+        <li><a href="pages/competitions.html">Competitions</a></li>
+        <li><a href="pages/scholarships.html">Scholarships</a></li>
+        <li><a href="pages/international.html">International</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Community</h4>
+      <ul>
+        <li><a href="pages/contribute.html">Contribute</a></li>
+        <li><a href="pages/about.html">About Us</a></li>
+        <li><a href="pages/developers.html">Developer Team</a></li>
+        <li><a href="pages/universities.html">Universities</a></li>
+        <li><a href="pages/updates.html">All Updates</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Supported By</h4>
+      <ul class="supporter-list">
+        <li>ICT Division Bangladesh</li>
+        <li>University Innovation Hub Program</li>
+        <li>Bangladesh Hi-Tech Park Authority</li>
+        <li>World Bank Group</li>
+        <li>iDEA</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 nextECA · nextPrtnr · All Rights Reserved</span>
+    <span><a href="https://nextECA.club" target="_blank">www.nextECA.club</a> · @nextECA.org</span>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

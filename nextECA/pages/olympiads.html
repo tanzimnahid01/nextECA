@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olympiads — nextECA</title>
+  <link rel="icon" href="../images/logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="noise"></div>
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo"><span class="logo-nxt">ne<span class="chevron-logo">&#10095;</span>t</span><span class="logo-eca">ECA</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#opportunities">Opportunities</a></li>
+    <li><a href="hackathons.html">Hackathons</a></li>
+    <li><a href="olympiads.html" class="active-page">Olympiads</a></li>
+    <li><a href="international.html">International</a></li>
+    <li><a href="../index.html#updates">Updates</a></li>
+    <li><a href="contribute.html">Contribute</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Category</div>
+  <h1>Olym<span class="red">piads</span></h1>
+  <p>The most prestigious academic competitions in the world. Representing your country at an olympiad is the highest honor in student academics.</p>
+</div>
+
+<section class="page-content">
+  <div class="page-intro-bar">
+    <div class="page-intro-stat"><span class="big-num">18</span><span>Active Olympiads</span></div>
+    <div class="page-intro-stat"><span class="big-num">100+</span><span>Countries Participate</span></div>
+    <div class="page-intro-stat"><span class="big-num">6</span><span>Core Subjects</span></div>
+    <div class="page-intro-stat"><span class="big-num">1959</span><span>IMO Founded</span></div>
+  </div>
+
+  <div class="what-is">
+    <h2>What are <span class="red">Olympiads?</span></h2>
+    <p>Academic olympiads are international competitions testing excellence in specific subjects — Mathematics, Physics, Chemistry, Biology, Informatics, and Astronomy among others. Students typically qualify through national-level rounds before representing their country globally.</p>
+    <p>Olympiad medals are among the most recognized credentials in academia. IMO gold medalists, for instance, are recruited directly by top universities worldwide without traditional admission requirements.</p>
+  </div>
+
+  <h2 class="section-h2">Active <span class="red">Olympiads</span></h2>
+  <div class="opp-grid" id="olympiadGrid"></div>
+
+  <h2 class="section-h2">Major Olympiad <span class="red">Subjects</span></h2>
+  <div class="tips-grid">
+    <div class="tip-card"><div class="tip-num">∑</div><h3>Mathematics (IMO)</h3><p>The International Mathematical Olympiad — held since 1959. 6 problems over 2 days. The most prestigious math competition in the world.</p></div>
+    <div class="tip-card"><div class="tip-num">⚛</div><h3>Physics (IPhO)</h3><p>International Physics Olympiad tests theoretical and experimental physics. Hosted annually in a different country.</p></div>
+    <div class="tip-card"><div class="tip-num">⚗</div><h3>Chemistry (IChO)</h3><p>International Chemistry Olympiad. Theoretical and practical rounds testing deep chemistry knowledge.</p></div>
+    <div class="tip-card"><div class="tip-num">🧬</div><h3>Biology (IBO)</h3><p>International Biology Olympiad covers molecular biology, genetics, ecology, anatomy, and physiology.</p></div>
+    <div class="tip-card"><div class="tip-num">💻</div><h3>Informatics (IOI)</h3><p>International Olympiad in Informatics — algorithmic problem solving. Two days, 3 tasks per day.</p></div>
+    <div class="tip-card"><div class="tip-num">🌌</div><h3>Astronomy (IOAA)</h3><p>International Olympiad on Astronomy and Astrophysics covering theory, data analysis, and observation rounds.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:100%;padding:24px 60px;border-top:1px solid #1a1a1a;">
+    <span>© 2025 nextECA · nextPrtnr</span>
+    <a href="../index.html">← Home</a>
+  </div>
+</footer>
+<script src="../js/data.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
+
+    const grid = document.getElementById('olympiadGrid');
+    const items = ECA_DATA.opportunities.filter(o => o.type === 'olympiad');
+    grid.innerHTML = items.map(o => {
+      const daysLeft = Math.round((new Date(o.deadline) - new Date()) / 86400000);
+      const bc = daysLeft <= 7 ? 'deadline-urgent' : daysLeft <= 30 ? 'deadline-soon' : 'deadline-normal';
+      const bt = daysLeft < 0 ? 'Closed' : `${daysLeft} days left`;
+      return `<div class="opp-card"><div class="opp-card-top"><span class="opp-type">Olympiad</span><span class="opp-country">${o.country}</span></div><h3>${o.title}</h3><p>${o.description}</p><div class="opp-meta"><span class="deadline-badge ${bc}">🗓 ${new Date(o.deadline).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})} · ${bt}</span><a href="${o.link}" target="_blank" class="opp-link">Register →</a></div></div>`;
+    }).join('');
+  });
+</script>
+</body>
+</html>

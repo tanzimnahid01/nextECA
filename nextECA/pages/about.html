@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — nextECA</title>
+  <link rel="icon" href="../images/logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="noise"></div>
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo"><span class="logo-nxt">ne<span class="chevron-logo">&#10095;</span>t</span><span class="logo-eca">ECA</span></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#opportunities">Opportunities</a></li>
+    <li><a href="hackathons.html">Hackathons</a></li>
+    <li><a href="olympiads.html">Olympiads</a></li>
+    <li><a href="international.html">International</a></li>
+    <li><a href="../index.html#updates">Updates</a></li>
+    <li><a href="contribute.html">Contribute</a></li>
+    <li><a href="about.html" class="active-page">About</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Who We Are</div>
+  <h1>About <span class="red">nextECA</span></h1>
+  <p class="about-hero-extra">nextECA is an open-source initiative by <strong>nextPrtnr</strong>, designed to democratize access to extracurricular opportunities for students worldwide — especially in underrepresented regions like Bangladesh.</p>
+</div>
+
+<section class="page-content">
+  <div class="what-is">
+    <h2>Our <span class="red">Mission</span></h2>
+    <p>We believe every student, regardless of geography or background, deserves access to information about global opportunities. From a student in Sylhet to one in São Paulo — nextECA exists to level the playing field.</p>
+    <p>By aggregating hackathons, olympiads, scholarships, fellowships, and competitions in one open platform, we reduce the information gap that holds back millions of talented students.</p>
+  </div>
+
+  <div class="what-is" style="margin-top:32px;">
+    <h2>From Our <span class="red">Founders</span></h2>
+    <p>"We started nextECA after realizing that students in Bangladesh were missing incredible international opportunities simply because they didn't know about them. Information shouldn't be a privilege — it should be a right. nextECA is our attempt to fix that."</p>
+    <p style="margin-top:12px;color:var(--red);font-family:var(--font-mono);font-size:0.8rem;letter-spacing:0.1em;">— The nextPrtnr Team</p>
+  </div>
+
+  <h2 class="section-h2">Funded & Supported <span class="red">By</span></h2>
+  <div class="tips-grid">
+    <div class="tip-card"><div class="tip-num" style="font-size:2rem;">🇧🇩</div><h3>ICT Division</h3><p>Ministry of Posts, Telecommunications and Information Technology, Government of Bangladesh.</p></div>
+    <div class="tip-card"><div class="tip-num" style="font-size:2rem;">💡</div><h3>iDEA</h3><p>Innovation Design and Entrepreneurship Academy — supporting tech entrepreneurs across Bangladesh.</p></div>
+    <div class="tip-card"><div class="tip-num" style="font-size:2rem;">🎓</div><h3>University Innovation Hub</h3><p>University Innovation Hub Program connecting students to startup and innovation ecosystems.</p></div>
+    <div class="tip-card"><div class="tip-num" style="font-size:2rem;">🏙</div><h3>Hi-Tech Park Authority</h3><p>Bangladesh Hi-Tech Park Authority fostering technology growth and digital economy.</p></div>
+    <div class="tip-card"><div class="tip-num" style="font-size:2rem;">🌍</div><h3>World Bank Group</h3><p>International financial institution providing grants and support for development initiatives.</p></div>
+  </div>
+
+  <h2 class="section-h2">The <span class="red">Team</span></h2>
+  <p style="color:var(--grey);margin-bottom:32px;">nextECA is built and maintained by a growing team of volunteers and professionals from Bangladesh and beyond.</p>
+  <div class="team-grid">
+    <div class="team-card"><div class="team-avatar">N</div><h3>nextPrtnr Core Team</h3><div class="team-role">Founding Organization</div></div>
+    <div class="team-card"><div class="team-avatar">D</div><h3>Open Source Devs</h3><div class="team-role">GitHub Contributors</div></div>
+    <div class="team-card"><div class="team-avatar">C</div><h3>Community Curators</h3><div class="team-role">Data & Research</div></div>
+    <div class="team-card"><div class="team-avatar">+</div><h3>Join the Team</h3><div class="team-role"><a href="contribute.html" style="color:var(--red)">Become a Contributor →</a></div></div>
+  </div>
+
+  <div style="margin-top:80px;text-align:center;">
+    <a href="contribute.html" class="btn btn-primary" style="margin-right:16px;">Contribute to nextECA</a>
+    <a href="../index.html" class="btn btn-outline">← Back to Home</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:100%;padding:24px 60px;border-top:1px solid #1a1a1a;">
+    <span>© 2025 nextECA · nextPrtnr · <a href="https://nextECA.club">www.nextECA.club</a></span>
+    <a href="../index.html">← Home</a>
+  </div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+    document.getElementById('hamburger').addEventListener('click', () => document.querySelector('.nav-links').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

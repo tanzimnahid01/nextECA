@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackathons — nextECA</title>
+  <link rel="icon" href="../images/logo.png" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<div class="noise"></div>
+
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">
+    <span class="logo-nxt">ne<span class="chevron-logo">&#10095;</span>t</span><span class="logo-eca">ECA</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="../index.html#opportunities">Opportunities</a></li>
+    <li><a href="hackathons.html" class="active-page">Hackathons</a></li>
+    <li><a href="olympiads.html">Olympiads</a></li>
+    <li><a href="international.html">International</a></li>
+    <li><a href="../index.html#updates">Updates</a></li>
+    <li><a href="contribute.html">Contribute</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="section-tag">Category</div>
+  <h1>Hack<span class="red">athons</span></h1>
+  <p>Build, compete, and innovate. Hackathons are where ideas meet execution. Find the right one for you.</p>
+</div>
+
+<section class="page-content">
+  <div class="page-intro-bar">
+    <div class="page-intro-stat"><span class="big-num">32</span><span>Active Hackathons</span></div>
+    <div class="page-intro-stat"><span class="big-num">48h</span><span>Avg Duration</span></div>
+    <div class="page-intro-stat"><span class="big-num">50+</span><span>Countries Covered</span></div>
+    <div class="page-intro-stat"><span class="big-num">$1M+</span><span>Prize Pools Listed</span></div>
+  </div>
+
+  <div class="what-is">
+    <h2>What is a <span class="red">Hackathon?</span></h2>
+    <p>A hackathon is an intensive event — typically 24 to 72 hours — where teams collaborate to build a software, hardware, or creative project from scratch. They're one of the best ways to learn fast, meet like-minded peers, and build your portfolio. Many startups and careers have launched from hackathon projects.</p>
+    <p>Hackathons come in many forms: online/offline, solo/team, theme-specific (sustainability, AI, health), or open-ended. Most are free to enter. Prize pools range from recognition certificates to $100,000+.</p>
+  </div>
+
+  <h2 class="section-h2">Active <span class="red">Hackathons</span></h2>
+  <div class="opp-grid" id="hackGrid"></div>
+
+  <div class="tips-section">
+    <h2>Tips for <span class="red">First-Timers</span></h2>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">01</div>
+        <h3>Find Your Niche</h3>
+        <p>Look for hackathons themed around your interest — AI, healthcare, fintech, environment. Passion drives better projects.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">02</div>
+        <h3>Build a Balanced Team</h3>
+        <p>Combine coders, designers, and presenters. A team with diverse skills wins more consistently than all-coders.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">03</div>
+        <h3>Done > Perfect</h3>
+        <p>Ship a working MVP. Judges want to see something functional and clearly communicated, not a half-finished masterpiece.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">04</div>
+        <h3>Tell a Story</h3>
+        <p>Your pitch matters as much as your code. Practice your demo. Clearly state the problem, solution, and impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom" style="max-width:100%;padding:24px 60px;border-top:1px solid #1a1a1a;">
+    <span>© 2025 nextECA · nextPrtnr</span>
+    <a href="../index.html">← Back to Home</a>
+  </div>
+</footer>
+
+<script src="../js/data.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40));
+    const btn = document.getElementById('hamburger');
+    const links = document.querySelector('.nav-links');
+    btn.addEventListener('click', () => links.classList.toggle('open'));
+
+    const grid = document.getElementById('hackGrid');
+    const hacks = ECA_DATA.opportunities.filter(o => o.type === 'hackathon');
+    grid.innerHTML = hacks.map(o => {
+      const daysLeft = Math.round((new Date(o.deadline) - new Date()) / 86400000);
+      const bc = daysLeft <= 7 ? 'deadline-urgent' : daysLeft <= 30 ? 'deadline-soon' : 'deadline-normal';
+      const bt = daysLeft < 0 ? 'Closed' : daysLeft === 0 ? 'Today!' : `${daysLeft} days left`;
+      return `<div class="opp-card"><div class="opp-card-top"><span class="opp-type">Hackathon</span><span class="opp-country">${o.country}</span></div><h3>${o.title}</h3><p>${o.description}</p><div class="opp-meta"><span class="deadline-badge ${bc}">🗓 ${new Date(o.deadline).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})} · ${bt}</span><a href="${o.link}" target="_blank" class="opp-link">Register →</a></div></div>`;
+    }).join('');
+  });
+</script>
+</body>
+</html>
